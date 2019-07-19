@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     let incorrectMovesAllowed = 7
     
     var currentGame: Game!
-    var listOfWords = names
+    var listOfWords = Names.all
     
     var totalWins = 0 {
         didSet {
@@ -42,7 +42,21 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadWords()
         newRound()
+    }
+    
+    func loadWords() {
+        let url = URL(string: "http://localhost:8080")!
+        URLSession.shared.dataTask(with: url) { data, _, _ in
+            guard let data = data else { return }
+            let jsonDecoder = JSONDecoder()
+            guard let words = try? jsonDecoder.decode(Names.self, from: data) else {
+                print(#line, #function, "Can't decode \(data)")
+                return
+            }
+            self.listOfWords = words.names
+        }.resume()
     }
     
     func enableButtons(_ enable: Bool, in view: UIView) {
