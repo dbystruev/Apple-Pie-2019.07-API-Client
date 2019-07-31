@@ -47,15 +47,20 @@ class ViewController: UIViewController {
     }
     
     func loadWords() {
-        let url = URL(string: "http://localhost:8080")!
+        let url = URL(string: "http://localhost:8080/list")!
         URLSession.shared.dataTask(with: url) { data, _, _ in
             guard let data = data else { return }
             let jsonDecoder = JSONDecoder()
-            guard let words = try? jsonDecoder.decode(Names.self, from: data) else {
+            guard let words = try? jsonDecoder.decode([Word].self, from: data) else {
                 print(#line, #function, "Can't decode \(data)")
+                
+                if let dataAsString = String(data: data, encoding: .utf8) {
+                    print(dataAsString)
+                }
+                
                 return
             }
-            self.listOfWords = words.names
+            self.listOfWords = words.map { $0.value }
         }.resume()
     }
     
