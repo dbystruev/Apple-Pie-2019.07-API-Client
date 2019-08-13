@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		692705E72303295000F9EFAC /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692705E62303295000F9EFAC /* Category.swift */; };
+		692705EA23032B5000F9EFAC /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692705E923032B5000F9EFAC /* CategoryTableViewController.swift */; };
+		692705EF23032DCF00F9EFAC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692705EE23032DCF00F9EFAC /* NetworkManager.swift */; };
 		694060A822F0CB4400928251 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694060A722F0CB4400928251 /* Word.swift */; };
 		69D66F87206CA13B00DCB739 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D66F86206CA13B00DCB739 /* AppDelegate.swift */; };
 		69D66F89206CA13B00DCB739 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D66F88206CA13B00DCB739 /* ViewController.swift */; };
@@ -18,6 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		692705E62303295000F9EFAC /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		692705E923032B5000F9EFAC /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
+		692705EE23032DCF00F9EFAC /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		694060A722F0CB4400928251 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		69D66F83206CA13B00DCB739 /* Apple Pie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Apple Pie.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		69D66F86206CA13B00DCB739 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +47,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		692705E52303293300F9EFAC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				692705E62303295000F9EFAC /* Category.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		692705E823032B1100F9EFAC /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				692705E923032B5000F9EFAC /* CategoryTableViewController.swift */,
+				69D66F88206CA13B00DCB739 /* ViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		692705EB23032D5D00F9EFAC /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				692705EE23032DCF00F9EFAC /* NetworkManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		692705EC23032D6D00F9EFAC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				69D66F86206CA13B00DCB739 /* AppDelegate.swift */,
+				69D66F8D206CA13B00DCB739 /* Assets.xcassets */,
+				69D66F92206CA13B00DCB739 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		692705ED23032DA200F9EFAC /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				69D66F8F206CA13B00DCB739 /* LaunchScreen.storyboard */,
+				69D66F8A206CA13B00DCB739 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		694060A922F0CB5400928251 /* Word */ = {
 			isa = PBXGroup;
 			children = (
@@ -70,13 +120,12 @@
 		69D66F85206CA13B00DCB739 /* Apple Pie */ = {
 			isa = PBXGroup;
 			children = (
-				69D66F86206CA13B00DCB739 /* AppDelegate.swift */,
-				69D66F88206CA13B00DCB739 /* ViewController.swift */,
+				692705EB23032D5D00F9EFAC /* Managers */,
+				692705E52303293300F9EFAC /* Models */,
+				692705ED23032DA200F9EFAC /* Storyboards */,
+				692705EC23032D6D00F9EFAC /* Supporting Files */,
+				692705E823032B1100F9EFAC /* View Controllers */,
 				694060A922F0CB5400928251 /* Word */,
-				69D66F8A206CA13B00DCB739 /* Main.storyboard */,
-				69D66F8D206CA13B00DCB739 /* Assets.xcassets */,
-				69D66F8F206CA13B00DCB739 /* LaunchScreen.storyboard */,
-				69D66F92206CA13B00DCB739 /* Info.plist */,
 			);
 			path = "Apple Pie";
 			sourceTree = "<group>";
@@ -153,11 +202,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				692705EA23032B5000F9EFAC /* CategoryTableViewController.swift in Sources */,
 				69D66F89206CA13B00DCB739 /* ViewController.swift in Sources */,
 				69D66F99206CB14A00DCB739 /* Game.swift in Sources */,
 				694060A822F0CB4400928251 /* Word.swift in Sources */,
+				692705EF23032DCF00F9EFAC /* NetworkManager.swift in Sources */,
 				69D66F9B206D80F500DCB739 /* Names.swift in Sources */,
 				69D66F87206CA13B00DCB739 /* AppDelegate.swift in Sources */,
+				692705E72303295000F9EFAC /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,7 +352,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8J39KF9DMS;
-				INFOPLIST_FILE = "Apple Pie/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Apple Pie/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.learnSwift.Apple-Pie";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -315,7 +367,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8J39KF9DMS;
-				INFOPLIST_FILE = "Apple Pie/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Apple Pie/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.learnSwift.Apple-Pie";
 				PRODUCT_NAME = "$(TARGET_NAME)";
