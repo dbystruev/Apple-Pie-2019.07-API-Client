@@ -10,6 +10,7 @@
 		692705E72303295000F9EFAC /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692705E62303295000F9EFAC /* Category.swift */; };
 		692705EA23032B5000F9EFAC /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692705E923032B5000F9EFAC /* CategoryTableViewController.swift */; };
 		692705EF23032DCF00F9EFAC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692705EE23032DCF00F9EFAC /* NetworkManager.swift */; };
+		692705F1230336E100F9EFAC /* CategoryWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692705F0230336E100F9EFAC /* CategoryWord.swift */; };
 		694060A822F0CB4400928251 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694060A722F0CB4400928251 /* Word.swift */; };
 		69D66F87206CA13B00DCB739 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D66F86206CA13B00DCB739 /* AppDelegate.swift */; };
 		69D66F89206CA13B00DCB739 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D66F88206CA13B00DCB739 /* ViewController.swift */; };
@@ -24,6 +25,7 @@
 		692705E62303295000F9EFAC /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		692705E923032B5000F9EFAC /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
 		692705EE23032DCF00F9EFAC /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		692705F0230336E100F9EFAC /* CategoryWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryWord.swift; sourceTree = "<group>"; };
 		694060A722F0CB4400928251 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		69D66F83206CA13B00DCB739 /* Apple Pie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Apple Pie.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		69D66F86206CA13B00DCB739 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +53,10 @@
 			isa = PBXGroup;
 			children = (
 				692705E62303295000F9EFAC /* Category.swift */,
+				692705F0230336E100F9EFAC /* CategoryWord.swift */,
+				69D66F98206CB14A00DCB739 /* Game.swift */,
+				69D66F9A206D80F500DCB739 /* Names.swift */,
+				694060A722F0CB4400928251 /* Word.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -91,16 +97,6 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		694060A922F0CB5400928251 /* Word */ = {
-			isa = PBXGroup;
-			children = (
-				69D66F98206CB14A00DCB739 /* Game.swift */,
-				69D66F9A206D80F500DCB739 /* Names.swift */,
-				694060A722F0CB4400928251 /* Word.swift */,
-			);
-			path = Word;
-			sourceTree = "<group>";
-		};
 		69D66F7A206CA13B00DCB739 = {
 			isa = PBXGroup;
 			children = (
@@ -125,7 +121,6 @@
 				692705ED23032DA200F9EFAC /* Storyboards */,
 				692705EC23032D6D00F9EFAC /* Supporting Files */,
 				692705E823032B1100F9EFAC /* View Controllers */,
-				694060A922F0CB5400928251 /* Word */,
 			);
 			path = "Apple Pie";
 			sourceTree = "<group>";
@@ -209,6 +204,7 @@
 				692705EF23032DCF00F9EFAC /* NetworkManager.swift in Sources */,
 				69D66F9B206D80F500DCB739 /* Names.swift in Sources */,
 				69D66F87206CA13B00DCB739 /* AppDelegate.swift in Sources */,
+				692705F1230336E100F9EFAC /* CategoryWord.swift in Sources */,
 				692705E72303295000F9EFAC /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

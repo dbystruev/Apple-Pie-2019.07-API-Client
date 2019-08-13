@@ -21,11 +21,14 @@ class ViewController: UIViewController {
         updateGameState()
     }
     
+    let networkManager = NetworkManager()
     
+    var category: Category!
     let incorrectMovesAllowed = 7
     
     var currentGame: Game!
     var listOfWords = Names.all
+    var keysDisabled = true
     
     var totalWins = 0 {
         didSet {
@@ -42,34 +45,32 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadWords()
-        newRound()
-    }
-    
-    func loadWords() {
-        let url = URL(string: "http://localhost:8080/list")!
-        URLSession.shared.dataTask(with: url) { data, _, _ in
-            guard let data = data else { return }
-            let jsonDecoder = JSONDecoder()
-            guard let words = try? jsonDecoder.decode([Word].self, from: data) else {
-                print(#line, #function, "Can't decode \(data)")
-                
-                if let dataAsString = String(data: data, encoding: .utf8) {
-                    print(dataAsString)
-                }
-                
-                return
+        enableButtons(false, in: view)
+        networkManager.loadWords(for: category) { words in
+            guard let words = words else { return }
+            self.listOfWords = words.map { $0.title }
+            guard !self.listOfWords.isEmpty else { return }
+            
+            DispatchQueue.main.async {
+                self.newRound()
             }
-            self.listOfWords = words.map { $0.value }
-        }.resume()
+        }
     }
     
     func enableButtons(_ enable: Bool, in view: UIView) {
+        keysDisabled = !enable
         if view is UIButton {
             (view as! UIButton).isEnabled = enable
         } else {
             for subview in view.subviews {
                 enableButtons(enable, in: subview)
+            }
+        }
+        if view == self.view && keysDisabled {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                if self.keysDisabled {
+                    self.performSegue(withIdentifier: "unwindSegue", sender: nil)
+                }
             }
         }
     }

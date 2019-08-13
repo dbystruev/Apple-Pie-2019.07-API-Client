@@ -30,8 +30,20 @@ class CategoryTableViewController: UITableViewController {
             self.categories = categories
         }
     }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "WordSegue" else { return }
+        guard let indexPath = tableView.indexPathForSelectedRow else { return }
+        let category = categories[indexPath.row]
+        let destination = segue.destination as! ViewController
+        destination.category = category
+    }
+    
+    @IBAction func unwind(_ segue: UIStoryboardSegue) {
+        
+    }
 }
-
 
 // MARK: - UITableViewDataSource
 extension CategoryTableViewController /*: UITableViewDataSource */ {

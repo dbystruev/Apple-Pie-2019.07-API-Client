@@ -31,4 +31,25 @@ class NetworkManager {
             completion(categories)
         }.resume()
     }
+    
+    func loadWords(for category: Category, completion: @escaping ([CategoryWord]?) -> Void) {
+        let url = baseURL.appendingPathComponent("words").appendingPathComponent("\(category.id)")
+        
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data else {
+                print(#line, #function, "Can't get data from \(url.absoluteString)")
+                completion(nil)
+                return
+            }
+            
+            let jsonDecoder = JSONDecoder()
+            guard let words = try? jsonDecoder.decode([CategoryWord].self, from: data) else {
+                print(#line, #function, "Can't decode data from \(data)")
+                completion(nil)
+                return
+            }
+            
+            completion(words)
+        }.resume()
+    }
 }
